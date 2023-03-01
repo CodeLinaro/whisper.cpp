@@ -299,13 +299,14 @@ typedef double ggml_float;
 
 #else
 
-#ifdef __wasm_simd128__
+#if defined(__wasm_simd128__)
 #include <wasm_simd128.h>
-#else
-#ifdef __POWER9_VECTOR__
+#elif defined(__POWER9_VECTOR__)
 #include <altivec.h>
 #undef bool
 #define bool _Bool
+#elif defined(__hexagon__)
+#include <hexagon_protos.h>
 #else
 #if defined(_MSC_VER) || defined(__MINGW32__)
 #include <intrin.h>
