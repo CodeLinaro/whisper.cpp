@@ -10,6 +10,7 @@
 #include <cmath>
 #include <cstring>
 #include <fstream>
+#include <algorithm>
 #include <regex>
 #include <locale>
 #include <codecvt>
