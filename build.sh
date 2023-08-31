@@ -8,7 +8,7 @@
 #export QEMU_LD_PREFIX=/prj/qct/llvm/release/internal/HEXAGON/branch-8.7lnx/latest/Tools/target/hexagon-linux-musl/
 TOOLS=/pkg/qct/software/llvm/build_tools/clang+llvm-16.0.0-cross-hexagon-unknown-linux-musl/
 export PATH=${TOOLS}/x86_64-linux-gnu/bin/:$PATH
-export QEMU_LD_PREFIX=${TOOLS}/target/hexagon-unknown-linux-musl/
+export QEMU_LD_PREFIX=${TOOLS}/x86_64-linux-gnu/target/hexagon-unknown-linux-musl
 
 cmake -GNinja \
    -Bbuild_dbg \
