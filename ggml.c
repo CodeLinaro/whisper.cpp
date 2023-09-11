@@ -307,20 +307,11 @@ typedef double ggml_float;
 #define bool _Bool
 #elif defined(__hexagon__)
 #include <hexagon_protos.h>
-#else
-#if defined(_MSC_VER) || defined(__MINGW32__)
+#elif defined(_MSC_VER) || defined(__MINGW32__)
 #include <intrin.h>
-#else
-#if defined(__AVX__) || defined(__AVX2__) || defined(__AVX512F__) || defined(__SSSE3__) || defined(__SSE3__)
-#if !defined(__riscv)
+#elif defined(__AVX__) || defined(__AVX2__) || defined(__AVX512F__) || defined(__SSSE3__) || defined(__SSE3__)
 #include <immintrin.h>
-#endif
-#endif
-#endif
-#endif
-#endif
-
-#ifdef __riscv_v_intrinsic
+#elif defined(__riscv_v_intrinsic)
 #include <riscv_vector.h>
 #endif
 

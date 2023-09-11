@@ -1,5 +1,6 @@
 set(TARGET main)
 add_executable(${TARGET} main.cpp)
+install(TARGETS ${TARGET})
 
 include(DefaultTargetOptions)
 
